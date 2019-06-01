@@ -22,8 +22,29 @@ body {
     width: 10%;
     float: left;
 }
-.arrows:hover{
+
+.arrows:hover {
     background-color: yellow;
+}
+
+#left_arrow {
+    order: 0;
+}
+
+#col1 {
+    order: 1;
+}
+
+#col2 {
+    order: 2;
+}
+
+#col3 {
+    order: 3;
+}
+
+#right_arrow {
+    order: 4;
 }
 
 .arrow_img {
@@ -31,6 +52,7 @@ body {
 }
 
 #menu {
+    z-index: 10;
     display: flex;
     position: fixed;
     width: 100%;
@@ -173,7 +195,7 @@ body {
     }
 }
 
-@media (min-width: 751px) {
+@media (min-width: 750px) {
     .column {
         width: 25%;
     }
@@ -188,7 +210,7 @@ body {
 
 }
 
-@media (min-width: 1051px) {
+@media (min-width: 1050px) {
     .col_text {
         font-size: 25px;
     }
