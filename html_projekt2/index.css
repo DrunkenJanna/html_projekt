@@ -62,9 +62,13 @@ body {
 }
 
 .menu_link {
+    border: none;
+    text-decoration: none;
+    color: darkgreen;
+    height: 100%;
     width: 25%;
     text-align: center;
-    font-size: 25px;
+    font-size: calc(1em + 1vw);
     font-family: pokemon-hollow;
 }
 
@@ -119,11 +123,6 @@ body {
 }
 
 @media(max-width: 300px) and (min-width: 0px) {
-    .menu_link {
-        line-height: 20px;
-        font-size: 12px;
-    }
-
     #col2 {
         display: none;
     }
@@ -218,4 +217,13 @@ body {
 
 .col_img:hover {
     background-color: lightgrey;
+}
+
+.menu_link:hover {
+    color: black;
+    background-color: beige;
+}
+.menu_link, .menu_link: visited, .menu_link: link{
+    color: black;
+    
 }
