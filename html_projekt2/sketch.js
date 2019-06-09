@@ -21,12 +21,14 @@ function setup() {
 }
 
 function draw() {
-    swipeRange = innerWidth * 0.5;
+    swipeRange = innerWidth * 0.4;
     displayColumns();
     body.mousePressed(newStartingMouseX);
     //body.touchStarted(newStartingTouchX);
     leftArrow.mousePressed(() => moveColumns("left"));
-    rightArrow.mousePressed(() => moveColumns("right"));
+    rightArrow.mousePressed(() => moveColumns("right"));    
+    leftArrow.touchStarted(() => moveColumns("left"));
+    rightArrow.touchStarted(() => moveColumns("right"));
 }
 
 //start swiping
@@ -39,12 +41,10 @@ function touchStarted() {
         startingTouchX = touches[0].winX;
         startingTouchY = touches[0].winY;
     }
-    return false;
 }
 
 //checking if swiped
 function mouseDragged() {
-
     if (startingMouseX - mouseX < -swipeRange) {
         startingMouseX = mouseX;
         moveColumns("right");
@@ -64,15 +64,6 @@ function touchMoved() {
         if (touches[0].winX - startingTouchX < -swipeRange) {
             startingTouchX = touches[0].winX;
             moveColumns("left");
-        }
-    }
-    if (touches[0].winY - startingTouchY > 10 || touches[0].winY - startingTouchY < -10) {
-        let slidingSpeed = 4;
-        let d = touches[0].winY - startingTouchY;
-        if (d > 0) {
-            window.scrollBy(0, -1 * slidingSpeed)
-        } else {
-            window.scrollBy(0, 1 * slidingSpeed)
         }
     }
 }
